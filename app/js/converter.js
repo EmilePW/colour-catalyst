@@ -4,10 +4,6 @@ var hexInput = document.querySelector('#hex'),
 		rgbInput = document.querySelector('#rgb'),
 		colourCard = document.querySelector('#colour-card');
 
-function sendError(errorStr) {
-	return errorStr;
-}
-
 function isAlphanumeric(char) {
 	// Check whether a character is a number or letter with ASCII codes
 	var ascii = char.charCodeAt(0);
@@ -59,6 +55,7 @@ function isValidRGB(arr) {
 }
 
 var hexLookup = {
+	// List of hexagonal to denary conversion
 	'0': 0,
 	'1': 1,
 	'2': 2,
@@ -78,6 +75,7 @@ var hexLookup = {
 };
 
 function invertHexLookup() {
+	// Create denary to hexagonal conversion
 	var invertedLookup = {};
 	var hexKeys = Object.keys( hexLookup );
 
@@ -89,11 +87,13 @@ function invertHexLookup() {
 }
 
 function convertHexToRGB(str) {
+	// Convert a valid hexadecimal string to an rgb string
 	if ( str.length === 3 ) {
 		str = str.concat( str );
 	}
 
 	function twoPartition(string) {
+		// Split a strig into two-sized partitions
 		var partitionedArray = [];	
 		
 		for ( var i = 0; i < string.length; i += 2 ) {
@@ -113,6 +113,7 @@ function convertHexToRGB(str) {
 }
 
 function convertRGBToHex(arr) {
+	// Convert an [r, g, b] array to hexadecimal
 	var hexKeys = Object.keys( hexLookup );
 
 	arr = arr.map( function(val) {
@@ -123,6 +124,7 @@ function convertRGBToHex(arr) {
 }
 
 function convertToCaps(str) {
+	// Convert string to all uppercase
 	str = str.split('').map( function(char) {
 		if ( isNaN(char) ) {
 			return char.toUpperCase();
@@ -135,11 +137,9 @@ function convertToCaps(str) {
 	return str.join('');
 }
 
-
 hexInput.addEventListener('keyup', function(e) {
+	// Conversion to RGB and colour change upon hexadecimal input
 	var hex = convertToCaps( this.value );
-
-	console.log( isValidHex(hex) );
 
 	if ( isValidHex(hex) ) {
 		rgbInput.value = convertHexToRGB(hex).join(',');
@@ -151,6 +151,7 @@ hexInput.addEventListener('keyup', function(e) {
 });
 
 rgbInput.addEventListener('keyup', function(e) {
+	// Conversion to hexadecimal and colour change upon rgb input
 	var rgb = this.value.split(',');
 
 	if( isValidRGB(rgb) ) {
@@ -161,5 +162,3 @@ rgbInput.addEventListener('keyup', function(e) {
 		hexInput.value = '';
 	}
 });
-
-
