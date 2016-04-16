@@ -1,0 +1,45 @@
+.main {
+	padding: 50px 0;
+}
+
+.title {
+	font-size: 36px;
+	margin-top: 50px;
+	color: #222;
+}
+
+.control {
+	margin-top: 50px;
+}
+
+.colour-input {
+	text-align: center;
+}
+
+.colour-input input {
+	text-align: center;
+	height: 60px;
+	width: 200px;
+	padding: 20px;
+	border: 3px solid #222;
+	font-size: 24px;
+}
+
+.colour-input input:focus {
+	border: 3px solid #999;
+	outline: none;
+}
+
+#colour-card {
+	margin: 50px auto;
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+}
+
+@media (min-device-width: 992px) {	
+	.control {
+		display: flex;
+		align-items: center;
+	}
+}
