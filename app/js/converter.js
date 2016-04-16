@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-var hexInput = document.querySelector('#hex'),
-		rgbInput = document.querySelector('#rgb'),
-		colourCard = document.querySelector('#colour-card');
+var hexInput = document.querySelector("#hex"),
+		rgbInput = document.querySelector("#rgb"),
+		colourCard = document.querySelector("#colour-card");
 
 function isAlphanumeric(char) {
 	// Check whether a character is a number or letter with ASCII codes
@@ -24,7 +24,7 @@ function isAlphanumeric(char) {
 
 function isValidHex(str) {
 	// Remove hexadecimal hash if used
-	str = str.replace('#', '');
+	str = str.replace("#", "");
 
 	// Reject strings too long or short
 	if ( str.length !== 6 ) {
@@ -38,7 +38,7 @@ function isValidHex(str) {
 	}
 
 	// Check all characters are alphanumeric
-	return str.split('').join('') === str.split('').filter( isAlphanumeric ).join('');
+	return str.split("").join("") === str.split("").filter( isAlphanumeric ).join("");
 }
 
 function isValidRGB(arr) {
@@ -51,27 +51,27 @@ function isValidRGB(arr) {
 		return num >= 0 && num <= 255;
 	}
 
-	return arr.join(',') === arr.filter( numIsRGB ).join(',');
+	return arr.join(",") === arr.filter( numIsRGB ).join(",");
 }
 
 var hexLookup = {
 	// List of hexagonal to denary conversion
-	'0': 0,
-	'1': 1,
-	'2': 2,
-	'3': 3,
-	'4': 4,
-	'5': 5,
-	'6': 6,
-	'7': 7,
-	'8': 8,
-	'9': 9,
-	'A': 10,
-	'B': 11,
-	'C': 12,
-	'D': 13,
-	'E': 14,
-	'F': 15
+	"0": 0,
+	"1": 1,
+	"2": 2,
+	"3": 3,
+	"4": 4,
+	"5": 5,
+	"6": 6,
+	"7": 7,
+	"8": 8,
+	"9": 9,
+	"A": 10,
+	"B": 11,
+	"C": 12,
+	"D": 13,
+	"E": 14,
+	"F": 15
 };
 
 function invertHexLookup() {
@@ -125,7 +125,7 @@ function convertRGBToHex(arr) {
 
 function convertToCaps(str) {
 	// Convert string to all uppercase
-	str = str.split('').map( function(char) {
+	str = str.split("").map( function(char) {
 		if ( isNaN(char) ) {
 			return char.toUpperCase();
 		} 
@@ -134,31 +134,31 @@ function convertToCaps(str) {
 		}
 	});
 
-	return str.join('');
+	return str.join("");
 }
 
-hexInput.addEventListener('keyup', function(e) {
+hexInput.addEventListener("keyup", function(e) {
 	// Conversion to RGB and colour change upon hexadecimal input
 	var hex = convertToCaps( this.value );
 
 	if ( isValidHex(hex) ) {
-		rgbInput.value = convertHexToRGB(hex).join(',');
-		colourCard.style.background = '#' + hex;
+		rgbInput.value = convertHexToRGB(hex).join(",");
+		colourCard.style.background = "#" + hex;
 	}
 	else {
-		rgbInput.value = '';
+		rgbInput.value = "";
 	}
 });
 
-rgbInput.addEventListener('keyup', function(e) {
+rgbInput.addEventListener("keyup", function(e) {
 	// Conversion to hexadecimal and colour change upon rgb input
-	var rgb = this.value.split(',');
+	var rgb = this.value.split(",");
 
 	if( isValidRGB(rgb) ) {
-		hexInput.value = convertRGBToHex(rgb).join('');
-		colourCard.style.background = 'rgb(' + rgb.join(',') + ')';
+		hexInput.value = convertRGBToHex(rgb).join("");
+		colourCard.style.background = "rgb(" + rgb.join(",") + ")";
 	}
 	else {
-		hexInput.value = '';
+		hexInput.value = "";
 	}
 });
