@@ -1,39 +1,9 @@
-.type-1 {
-	font-family: 'Inconsolata';
-}
-
-@font-face {
-	src: url('/fonts/venti/VentiCF-Bold.woff2');
-	font-family: 'Venti Bold';
-}
-
-@font-face {
-	src: url('/fonts/visby/VisbyCF-Bold.woff2');
-	font-family: 'Visby Bold';
-}
-
-
-@font-face {
-	src: url('/fonts/argent/ArgentCF-Bold.woff2');
-	font-family: 'Argent Bold';
-}
-
-@font-face {
-	src: url('/fonts/radnika/Radnika-Medium.ttf');
-	font-family: 'Radnika Medium';
-}
-
-@font-face {
-	src: url('/fonts/geomanist/geomanist-regular-webfont.woff2');
-	font-family: 'Geomanist Regular';
-}
-
 @font-face {
 	src: url('/fonts/einstellung/NeueEinstellung-Medium.ttf');
 	font-family: 'Neue Einstellung Medium';
 }
 
 
-.type-2 {
+.primary-font {
 	font-family: 'Neue Einstellung Medium', sans-serif;
 }
