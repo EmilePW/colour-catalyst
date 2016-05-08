@@ -1,0 +1,29 @@
+.scheme-generator {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.generate {
+	margin-top: 100px;
+	width: 200px;
+	height: 60px;
+	color: #222;
+}
+
+.colour-scheme {
+	width: 100%;
+	list-style: none;
+	margin-top: 100px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.colour div {
+	width: 200px;
+	height: 200px;
+	border: 2px solid #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

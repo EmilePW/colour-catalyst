@@ -16,25 +16,7 @@
 					<h1 class="title primary-font">Colour Catalyst</h1>
 				</div>
 			</div>
-			<div class="control row">
-				<div class="col-xs-12 col-md-4">
-					<div id="root">
-					</div>
-					<div class="primary-font text-center">
-						<h2>Hexadecimal</h2>
-						<input id="hex" class="colour-input" type="text" placeholder="000000" />
-					</div>
-				</div>
-				<div class="col-xs-12 col-md-4">
-					<div id="colour-card"></div>
-				</div>
-				<div class="col-xs-12 col-md-4">
-					<div class="primary-font text-center">
-						<h2>RGB</h2>
-						<input id="rgb" class="colour-input" type="text" placeholder="0,0,0" />
-					</div>
-				</div>
-			</div>
+			<div ng-view></div>
 		</div>
 
 		<script src="./app/js/dist/bundle.js"></script>
