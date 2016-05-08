@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Colour Catalyst</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="./app/styles/vars.css">
+		<link rel="stylesheet" href="./app/styles/layout.css">
+	</head>
+	<body>
+		<div class="main container">
+			<div class="row">
+				<div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+					<h1 class="title primary-font">Colour Catalyst</h1>
+				</div>
+			</div>
+			<div class="control row">
+				<div class="col-xs-12 col-md-4">
+					<div id="root">
+					</div>
+					<div class="primary-font text-center">
+						<h2>Hexadecimal</h2>
+						<input id="hex" class="colour-input" type="text" placeholder="000000" />
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<div id="colour-card"></div>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<div class="primary-font text-center">
+						<h2>RGB</h2>
+						<input id="rgb" class="colour-input" type="text" placeholder="0,0,0" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./app/js/dist/bundle.js"></script>
+	</body>
+</html>
